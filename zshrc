@@ -36,7 +36,10 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+zstyle ':completion:*:vim:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
 
+export JAVA_HOME=/usr/java/jre1.7.0_25/
+export JDK_HOME=/usr/java/jdk1.7.0_25/
 export MARKPATH=$HOME/.marks
 function jump {
   cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
@@ -50,3 +53,5 @@ function unmark {
 function marks {
   ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
 }
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
