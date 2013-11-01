@@ -3,6 +3,7 @@ map <C-a> <esc>:w<CR>
 imap <C-a> <esc>:w<CR>
 map <C-x> <esc>:wq<CR>
 imap <C-x> <esc>:wq<CR>
+map § <esc>:nohlsearch<CR>
 
 execute pathogen#infect()
 syntax enable
