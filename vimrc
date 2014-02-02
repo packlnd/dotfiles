@@ -4,12 +4,15 @@ imap <C-a> <esc>:w<CR>
 map <C-x> <esc>:wq<CR>
 imap <C-x> <esc>:wq<CR>
 map § <esc>:nohlsearch<CR>
+map ' <esc>*<CR>
+map , <esc><C-w>w<CR>
 
 execute pathogen#infect()
 syntax enable
 filetype off
 filetype plugin indent on
-set nowrap
+
+" set nowrap
 set wildmenu
 set wildmode=list:full
 set smarttab
