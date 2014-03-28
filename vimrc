@@ -12,7 +12,7 @@ syntax enable
 filetype off
 filetype plugin indent on
 
-" set nowrap
+set nowrap
 set wildmenu
 set wildmode=list:full
 set smarttab
@@ -31,6 +31,7 @@ set encoding=utf-8
 set wildignore+=*.class,*.aux,*.pdf,*.log,*~
 set ruler
 let g:solarized_termcolors=256
+set term=xterm-256color
 set background=dark
 colorscheme solarized
 " Some Linux distributions set filetype in /etc/vimrc.
