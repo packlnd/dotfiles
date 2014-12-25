@@ -6,13 +6,25 @@ imap <C-x> <esc>:wq<CR>
 map § <esc>:nohlsearch<CR>
 map ' <esc>*<CR>
 map , <esc><C-w>w<CR>
+map k gk
+map j gj
+" replace visual selection without overwriting default register
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vnoremap <silent> <expr> p <sid>Repl()
 
 execute pathogen#infect()
 syntax enable
 filetype off
 filetype plugin indent on
 
-set nowrap
+set wrap
 set wildmenu
 set wildmode=list:full
 set smarttab
@@ -37,3 +49,4 @@ colorscheme solarized
 " Some Linux distributions set filetype in /etc/vimrc.
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
 set runtimepath+=$GOROOT/misc/vim
+set backspace=indent,eol,start

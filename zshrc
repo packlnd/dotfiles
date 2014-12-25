@@ -1,4 +1,4 @@
-# Set up the prompt
+# Set up the promp
 
 autoload -Uz promptinit
 promptinit
@@ -38,6 +38,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 zstyle ':completion:*:vim:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
 
+ZSH_THEME="alanpeabody"
+
 export MARKPATH=$HOME/.marks
 function jump {
   cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
@@ -52,5 +54,15 @@ function marks {
   ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
 }
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 export GOPATH="$HOME/labs"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/arm-2011.03/bin:$PATH"
+export PATH="/usr/bin/javaws:$PATH"
+export PATH="$HOME/depot_tools:$PATH"
+export JAVA_HOME=Downloads/jdk1.8.0_20/bin/java
+export PATH=$JAVA_HOME/bin:$PATH
+export PATH="$HOME/Downloads/javacc-5.0/bin:$PATH"
+eval "$(rbenv init -)"
+alias tmux="TERM=screen-256color-bce tmux"
+alias gotokth="ssh packland@u-shell.csc.kth.se"
+export kthdir=packland@u-shell.csc.kth.se
