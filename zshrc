@@ -1,4 +1,4 @@
-# Set up the promp
+## Set up the promp
 
 autoload -Uz promptinit
 promptinit
@@ -53,16 +53,35 @@ function unmark {
 function marks {
   ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
 }
-export PATH="$HOME/.rbenv/bin:$PATH"
 export GOPATH="$HOME/labs"
-export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/arm-2011.03/bin:$PATH"
 export PATH="/usr/bin/javaws:$PATH"
-export PATH="$HOME/depot_tools:$PATH"
-export JAVA_HOME=Downloads/jdk1.8.0_20/bin/java
-export PATH=$JAVA_HOME/bin:$PATH
+export PATH="$HOME/chromium/depot_tools:$PATH"
 export PATH="$HOME/Downloads/javacc-5.0/bin:$PATH"
-eval "$(rbenv init -)"
 alias tmux="TERM=screen-256color-bce tmux"
-alias gotokth="ssh packland@u-shell.csc.kth.se"
-export kthdir=packland@u-shell.csc.kth.se
+export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
+export SCALA_HOME="/usr/local/scala/scala-2.11.6"
+export PATH="$SCALA_HOME/bin:$PATH"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/Downloads/omnetpp-4.4.1/lib"
+export TCL_LIBRARY="/usr/share/tcltk/tcl8.6"
+export PATH="$PATH:$HOME/Downloads/omnetpp-4.4.1/bin"
+export PATH="$PATH:/usr/local/android-studio/bin"
+export JAVA_HOME="/usr/local/java/jdk1.8.0_45"
+export PATH=$JAVA_HOME/bin:$PATH
+export PATH="$PATH:/usr/local/jre1.8.0_45"
+alias -g ...='../..'
+alias -g ....='../../..'
+alias xclip="xclip -selection c"
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+  export TERM='xterm-256color'
+else
+  export TERM='xterm-color'
+fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$JMFHOME/lib"
+export PATH="/home/packland/javacv-bin:$PATH"
+export CLASSPATH="/home/packland/javacv-bin:$CLASSPATH"
+export GOPATH="$HOME/uw/452/452-labs"
+export PATH="/home/packland/home-automation/lamp/app/swift-2.2-SNAPSHOT-2015-12-18-a-ubuntu14.04/usr/bin/:${PATH}"

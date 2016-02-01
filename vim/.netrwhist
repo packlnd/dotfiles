@@ -1,9 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/patrik/kth/cpp/lab1/0.4_does_it_fit'
-let g:netrw_dirhist_2='/home/patrik/kth/prosam/anteckningar/tmp'
-let g:netrw_dirhist_3='/home/patrik/labs/cprog/lab1/1.8_strong_exception'
-let g:netrw_dirhist_4='/home/patrik/Downloads/NIC/examples'
-let g:netrw_dirhist_5='/home/patrik/vim'
-let g:netrw_dirhist_6='/home/patrik/labs/cprog/lab1/1.2_concurrency_is_the_new_black'
-let g:netrw_dirhist_7='/home/patrik/labs/cprog/lab1/1.8_strong_exception'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/packland/calendar-maker'
+let g:netrw_dirhist_2='/home/packland/calendar-maker/tex'
+let g:netrw_dirhist_3='/home/packland/Downloads/6.824-master/src/pbservice'
+let g:netrw_dirhist_4='/home/packland/uw/452/452-labs/src/viewservice'
+let g:netrw_dirhist_5='/home/packland/calendar-maker/tex'
