@@ -1,19 +1,18 @@
+syntax on
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set runtimepath+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+Bundle 'gmarik/Vundle.vim'
 
-Plugin 'flazz/vim-colorschemes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'ColorSchemeMenuMaker'
-Plugin 'rainux/vim-desert-warm-256'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'fatih/vim-go'
-Plugin 'chrisbra/Colorizer'
-
-Plugin 'scrooloose/syntastic'
-call vundle#end()
+Bundle 'flazz/vim-colorschemes'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'ColorSchemeMenuMaker'
+Bundle 'rainux/vim-desert-warm-256'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'fatih/vim-go'
+Bundle 'chrisbra/Colorizer'
+Bundle 'scrooloose/syntastic'
 filetype plugin indent on
 
 map <C-t> <esc>:tabnew<CR>
@@ -25,6 +24,14 @@ imap <C-x> <esc>:wq<CR>
 map § <esc>:nohlsearch<CR>
 map ' <esc>*<CR>
 map , <esc><C-w>w<CR>
+map <C-Right> <esc>:wlnext<CR>
+imap <C-Right> <esc>:wlnext<CR>
+map <C-Left> <esc>:wlprev<CR>
+imap <C-Left> <esc>:wlprev<CR>
+imap <ö> </>
+imap <C-ö> <ö>
+imap <ä> <;>
+imap <C-ä> <ä>
 inoremap <C-f> <C-O>za
 nnoremap <C-f> za
 onoremap <C-f> <C-C>za
@@ -54,8 +61,8 @@ set number
 set list
 set listchars=tab:--,trail:░,extends:>,precedes:<
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set hlsearch
 set encoding=utf-8
@@ -71,8 +78,9 @@ colorscheme solarized
 set runtimepath+=$GOROOT/misc/vim
 set backspace=indent,eol,start
 let g:syntastic_cpp_compiler_options = '-std=c++0x -Wall -pedantic'
+let g:syntastic_always_populate_loc_list = 1
 set foldmethod=indent
 set nofoldenable
 set foldlevel=1
 let g:colorizer_auto_filetype='css,html'
-
+set t_ut=
